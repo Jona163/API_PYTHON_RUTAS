@@ -83,6 +83,12 @@ if ruta is not None and distancia is not None:
     print(f"La mejor ruta seleccionada es: {ruta}")
     print(f"La distancia total es de {distancia} km.")
 
+    coordenadas = obtener_coordenadas(data)
+
+    dibujar_ruta_en_mapa(ruta, coordenadas)
+else:
+    print("No se encontró una ruta válida para los destinos seleccionados.")
     costo_aproximado = calcular_costo_aproximado(distancia_valor, costo_combustible_litro, consumo_litro, costo_peaje, gastos_adicionales)
 
     print(f"El costo aproximado del recorrido es de ${costo_aproximado:.2f}.")
+
