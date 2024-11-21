@@ -54,3 +54,11 @@ def dibujar_ruta_en_mapa(ruta, coordenadas):
     # Agrega marcadores para cada parada en la ruta
     for i, coord in enumerate(coordenadas):
         folium.Marker(coord, popup=f"Parada {i+1}: {ruta[i]}").add_to(mapa)
+
+
+    # Dibuja la línea que conecta las paradas en la ruta
+    folium.PolyLine(locations=coordenadas, color='blue').add_to(mapa)
+
+    # Guarda el mapa en un archivo HTML
+    mapa.save("ruta_interactiva.html")
+    print("Se ha creado un archivo 'ruta_interactiva.html' con el mapa interactivo.")
