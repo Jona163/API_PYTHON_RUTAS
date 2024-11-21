@@ -40,3 +40,7 @@ def obtener_coordenadas(data):
         lat, lng = step["start_location"]["lat"], step["start_location"]["lng"]
         coordenadas.append((lat, lng))
         return coodernadas
+
+def calcular_costo_aproximado(distancia, costo_combustible_litro, consumo_litro, costo_peaje, gastos_adicionales): 
+    costo_combustible = (distancia / consumo_litro) * costo_combustible_litro
+    costo_total = costo_combustible + costo_peaje + gastos_adicionales
