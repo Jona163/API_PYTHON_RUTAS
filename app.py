@@ -45,3 +45,12 @@ def calcular_costo_aproximado(distancia, costo_combustible_litro, consumo_litro,
     costo_combustible = (distancia / consumo_litro) * costo_combustible_litro
     costo_total = costo_combustible + costo_peaje + gastos_adicionales
     return costo_total
+
+
+def dibujar_ruta_en_mapa(ruta, coordenadas):
+    # Crea un mapa centrado en las coordenadas de la primera parada
+    mapa = folium.Map(location=coordenadas[0], zoom_start=10)
+
+    # Agrega marcadores para cada parada en la ruta
+    for i, coord in enumerate(coordenadas):
+        folium.Marker(coord, popup=f"Parada {i+1}: {ruta[i]}").add_to(mapa)
