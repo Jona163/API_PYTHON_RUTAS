@@ -74,6 +74,10 @@ api_key = "YOUR_API_KEI"
 
 ruta, distancia, distancia_valor, data = obtener_ruta(partida, destino, paradas, api_key)
 
+    costo_combustible_litro = 20  # Costo del litro de combustible
+    consumo_litro = 15  # Consumo promedio del vehículo por litro
+    costo_peaje = 150  # Costo total de peajes en el recorrido
+    gastos_adicionales = 500  # Otros gastos adicionales
 
 if ruta is not None and distancia is not None:
     print(f"La mejor ruta seleccionada es: {ruta}")
