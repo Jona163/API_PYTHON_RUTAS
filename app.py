@@ -27,3 +27,10 @@ def obtener_ruta(partida, destino, paradas, api_key):
         return ruta, distancia, distancia_valor, data
     else:
         return None, None, None, None
+
+def obtener_coordenadas(data):
+    coordenadas = []
+
+    for step in data["routes"][0]["legs"][0]["steps"]:
+        lat, lng = step["start_location"]["lat"], step["start_location"]["lng"]
+        coordenadas.append((lat, lng))
